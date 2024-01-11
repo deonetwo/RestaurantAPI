@@ -3,7 +3,6 @@ using Microsoft.Extensions.Options;
 using RestaurantAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-)
 
 // Add services to the container.
 

@@ -31,7 +31,7 @@ namespace RestaurantAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Food>> GetFood(int id)
         {
-            var food = await _context.Foods.FindAsync(id);
+            var food = await _context.Foods.Include(t => t.Transactions).Where(f => f.foodId == id).FirstAsync();
 
             if (food == null)
             {
